@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Javascript file -->
+  <!-- Input validation j.s -->
+  <script>
+    
+
+var myInput=document.getElementById("password");
+
+
+// /////////
+// Password Hints/////////////////
+myInput.onkeyup=function(){
+      
+  var lowerCaseLetters=/[a-z]/g;
+
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+//   // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+//   // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+//   // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+
+
+}
+// Password confirm////////////////////////??
+function validate(myform) {
+                password = myform.password.value;
+                password1 = myform.password1.value;
+                var name=document.myform.name.value;
+                var zip=document.myform.zipcode.value;
+                var num=document.myform.number.value;
+                var email=document.myform.gmail.value;
+                // var passw=document.myform.password.value;
+                // var passw1=document.myform.password1.value;
+            
+               if(name != "" && zip !="" && num != "" && email != ""){
+                 
+                  // If password not entered
+                if (password == '')
+                
+                {
+
+                document.myform.password.focus();
+                
+                
+                    alert ("Please enter Password");
+                    return false;
+                }
+                      
+                // If confirm password not entered
+                 if (password1 == ''){
+                document.myform.password.focus();
+                    alert ("Please enter confirm password");
+                    return false;
+                }
+                // If Not same return False.    
+                 if (password != password1) {
+                  document.myform.password1.focus();
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+  
+                // If same return True.
+                else{
+                    alert("HURRAY!!! Your Javascript validation form Submitted Successfully! ")
+                    return true;
+                    
+                }
+               }
+
+                if(name==""){
+        document.myform.name.focus();
+document.getElementById("demo").innerHTML="Please provide your name!";
+return false;
+
+}
+if(zip==""){
+  document.myform.zipcode.focus();
+  document.getElementById("zp").innerHTML="Please provide your area code!";
+  return false;
+}
+      // if(name==""){
+      //   alert("please provide your name");
+      //   document.myform.name.focus();
+      //   return false;
+ 
+      // }
+      if(num==""){
+        alert("Please provide your number");
+        document.myform.number.focus();
+        return false;
+      } 
+      
+      if(email==""){
+        alert ("please provide your gmail");
+        document.myform.gmail.focus();
+        return false;
+      }
+              
+            }
+
+          
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////
+////////////////////////////
+    // javascript file end here
+   
+  </script>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link src="assest/js.js">
+    <link rel="stylesheet" href="assest/css.css">
+
+</head>
+<body>
+      <div class="header">
+        <h2>Javascript Form Validation</h2>
+          <form action="index.html" name="myform" onsubmit="return validate(this)"  method="post"  >
+                 <label>Name<span class="required-red">*</span></label><input name="name" class="name" type="text" placeholder="Enter Your name" >
+                 <label style="color: red;margin-left: 4px;" id="demo"></label>
+                 
+                 <br>  <label >Address:</label><input  class="add" name="Address"  type="text" placeholder="Address"   >
+                         <br><label >Zip code<span class="required-red">*</span>:</label><input name="zipcode" class="zip-code" type="number" placeholder="Zip"><label style="color: red;" id="zp"></label>
+                         <br>
+                              <label >Country<span class="required-red">*</span>:</label><select class="Country">
+                          <option class="Country"  value="Select">Select</option >
+                                <option  value="Armenia">Armenia</option>
+                                   <option value="Bahrain">Bahrain</option>
+                                     <option value="India">India</option>
+                                        <option value="Japan">Japan</option>
+                                          <option value="Malaysia">Malaysia</option>
+                                            <option value="Nepal">Nepal</option>
+                                              <option value="Oman">Oman</option>
+                                                <option value="Russia">Russia</option>
+                                                  <option value="Singapore">Singapore</option>
+                                                    <option value="Uae">Uae</option>
+                                                        </select><br>
+                                 <label>Gender:<span class="required-red">*</span></label> <label class="rad">Male</label><input  class="rad" type="radio"  id="Male" name="Gender"  value="Male"  title="Select one"><label>Female</label><input class="rad" type="radio" id="Female" name="Gender" value="Female"><label>Others</label> <input class="rad" type="radio" id="Others" name="Gender" value="Others">
+                                     <br><label>Preferences<span class="required-red">*</span>:</label> <input class="pref" type="checkbox">Red <input class="pref" type="checkbox">Blue <input class="pref" type="checkbox">Green
+                                       <br> <label>Phone Number<span class="required-red">*</span>:</label><input name="number" class="num" type="number" placeholder="Phone Number">
+                                         <br>
+                         <label>Email<span class="required-red">*</span>:</label><input name="gmail" class="gmail" type="email" placeholder="Email">
+                            <br><label for="password">Password(6-9 Character)<span class="required-red">*</span>:</label><input name="password" id="password" type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"   title="8-10 Characters Max">
+                               <br><label for="password">Verify Password<span class="required-red">*</span>:</label><input name="password1" class="ver"  type="text/number" >
+                                   <br> <button class="login" type="submit" value="submit">Login</button><button type="reset" class="clear">clear</button>
+ </form>
+ 
+ 
+      
+
+</body>
+
+</html>

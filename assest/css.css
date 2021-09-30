@@ -1,0 +1,90 @@
+
+/* form{
+       width: 40%;
+      height: 360px; 
+       border: 1px solid black; 
+       box-shadow:2px 2px  gray; 
+} */
+
+.required-red{
+      color: red;
+}
+.header{ 
+align-items: center;
+
+}
+label,input{
+      padding: 5px;
+      margin-top: 6px;
+}
+input{
+      padding: 3px 10px;
+      align-items: center;
+}
+label{
+      font-family:sans-serif;
+      font-size: 15px;
+      text-align: left;
+      /* margin-left: 20px; */
+
+}
+.login{
+      background-color:rgba(140, 114, 114, 0.1);
+margin-left:190px ;
+margin-top: 25px
+;
+border-radius: 5px 5px 5px;
+}
+.clear{
+      margin-left: 90px;
+      background-color:rgba(140, 114, 114, 0.1);
+      border-radius: 5px 5px 5px;
+}
+button:hover{
+      background-color:white ;
+
+}
+option{color:black
+      
+;
+font-family: 'Times New Roman', Times, serif;
+font-size: 15px;
+}
+radio{
+      background-color:black;
+      color: black;
+      ;
+}
+      
+.name{
+      margin-left: 132px;
+}
+.add{
+      margin-left: 119px;
+
+}
+.zip-code{
+      margin-left: 109px;
+}
+.country{
+      margin-left: 
+}
+select{
+      margin-left: 114px;
+      padding: 3px 40px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      align-items: left;
+      text-align: left;
+}
+.num{
+      margin-left: 67px;
+}
+.gmail{
+      margin-left: 130px;
+}
+.ver{
+      margin-left: 60px;
+}
+
+
